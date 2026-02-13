@@ -1,0 +1,1271 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ArknX – All-in-One Services App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/images/logo-removebg.png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* BRAND COLORS */
+    :root {
+      --primary: #004a80;
+      --accent-red: #e41e26;
+      --accent-orange: #f7941d;
+      --accent-blue: #5cc3e8;
+      --secondary: #64748b;
+      --dark: #0f172a;
+      --light-blue: #eff6ff;
+      --glass-bg: rgba(255, 255, 255, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.5);
+      /* Liquid-Glossy Gradient */
+      --gradient-bg: radial-gradient(at 0% 0%, #ffffff 0px, transparent 50%),
+                     radial-gradient(at 100% 0%, #fff7ed 0px, transparent 50%),
+                     radial-gradient(at 100% 100%, #a3d4f6 0px, transparent 50%),
+                     radial-gradient(at 0% 100%, #fef2f2 0px, transparent 50%);
+    }
+
+    body {
+      background-color: #fcfcfc;
+    }
+
+    /* ABOUT SECTION ENHANCEMENT */
+    .about-visual {
+      position: relative;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--accent-blue);
+      opacity: 0.1;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: morph 10s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes morph {
+      0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    }
+
+    .highlight-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border-left: 4px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .highlight-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .highlight-item i {
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    /* VISION & MISSION */
+    .vision-card {
+      border-top: 5px solid var(--accent-red);
+    }
+
+    .mission-card {
+      border-top: 5px solid var(--accent-orange);
+    }
+
+    /* WHY US CARDS */
+    .why-box {
+      border-bottom: 4px solid transparent;
+      text-align: center;
+    }
+
+    .why-box:hover {
+      border-bottom-color: var(--accent-blue);
+    }
+
+    .why-icon-wrap {
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 1.75rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .why-box:nth-child(1) .why-icon-wrap { color: var(--accent-red); }
+    .why-box:nth-child(2) .why-icon-wrap { color: var(--accent-orange); }
+    .why-box:nth-child(3) .why-icon-wrap { color: var(--accent-blue); }
+
+    .why-box:hover .why-icon-wrap {
+      background: var(--primary);
+      color: #fff !important;
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 15px 30px rgba(0, 74, 128, 0.2);
+    }
+
+    /* APP CARDS COLOR ACCENTS */
+    .app-card-vendor { border-bottom: 4px solid var(--accent-red); }
+    .app-card-consumer { border-bottom: 4px solid var(--accent-orange); }
+    .app-card-rider { border-bottom: 4px solid var(--accent-blue); }
+
+    /* HERO REDESIGN */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--gradient-bg);
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px 0;
+      overflow: hidden;
+    }
+
+    /* Animated Liquid Blobs */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+      filter: blur(60px);
+      z-index: 0;
+      animation: blob-float 15s infinite alternate;
+    }
+
+    @keyframes blob-float {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(-100px, 100px) scale(1.2); }
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 900;
+      color: var(--dark) !important;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--secondary);
+      max-width: 550px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* FLOATING GLOSSY CARDS */
+    .hero-visual {
+      position: relative;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stack-card {
+      position: absolute;
+      border-radius: 24px;
+      padding: 30px;
+      width: 360px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      transition: all 0.5s ease;
+    }
+
+    .card-back {
+      background: rgba(255, 255, 255, 0.3);
+      top: 20px;
+      right: 40px;
+      z-index: 1;
+      animation: card-float-slow 8s infinite ease-in-out;
+    }
+
+    .card-front {
+      background: rgba(255, 255, 255, 0.7);
+      top: 100px;
+      right: 0;
+      z-index: 2;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+      animation: card-float 6s infinite ease-in-out;
+    }
+
+    @keyframes card-float {
+      0%, 100% { margin-top: 0; }
+      50% { margin-top: -20px; }
+    }
+
+    @keyframes card-float-slow {
+      0%, 100% { margin-top: 0; }
+      50% { margin-top: -15px; }
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .card-label i { font-size: 0.5rem; }
+
+    .card-title {
+      font-weight: 800;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+    }
+
+    .card-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--secondary);
+    }
+
+    .card-list li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .badge-premium {
+      background: var(--light-blue);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.75rem;
+    }
+
+    /* STATS ROW */
+    .hero-stats {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .stat-badge {
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--dark);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    /* UTILS */
+    .btn-glass {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .btn-glass:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION TITLES */
+    .section-title {
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--dark);
+      letter-spacing: -1px;
+    }
+
+    /* VALUE BOX (Glossy) */
+    .value-box {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .value-box:hover {
+      transform: translateY(-10px);
+      background: #fff;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-box h5 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .value-box h3 {
+      font-weight: 800;
+      color: var(--dark) !important;
+    }
+
+    /* SERVICE CARDS (Glossy) */
+    .service-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
+      height: 100%;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      background: #fff;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+
+    .service-card h5 {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .service-card img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    /* OUR APPS SECTION (Glossy & Dynamic) */
+    .app-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px 30px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      height: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      transform: rotate(45deg);
+      transition: all 0.7s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+      left: -20%;
+      top: -20%;
+    }
+
+    .app-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .app-card img {
+      height: 250px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 20px;
+      transition: transform 0.5s ease;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    }
+
+    @media (max-width: 768px) {
+      .app-card img {
+        height: 220px;
+      }
+    }
+
+    .app-card:hover img {
+      transform: scale(1.1) translateY(-10px);
+    }
+
+    .app-card h4 {
+      margin-top: 25px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+    }
+
+    .app-card h6 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--secondary);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    .app-card ul {
+      text-align: left;
+      padding-left: 0;
+      list-style: none;
+      color: var(--secondary);
+    }
+
+    .app-card ul li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .app-card ul li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--accent-orange);
+    }
+
+    .app-card-vendor { border-top: 6px solid var(--accent-red); }
+    .app-card-consumer { border-top: 6px solid var(--accent-orange); }
+    .app-card-rider { border-top: 6px solid var(--accent-blue); }
+
+    .app-card-vendor:hover { border-top-color: var(--accent-red); }
+    .app-card-consumer:hover { border-top-color: var(--accent-orange); }
+    .app-card-rider:hover { border-top-color: var(--accent-blue); }
+
+    
+    .navbar-brand {
+      font-weight: 900 !important;
+      font-size: 1.8rem !important;
+      color: var(--primary) !important; /* ArknX Dark Blue */
+      letter-spacing: -1.5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand span {
+      color: var(--accent-red); /* Style for the 'X' or part of it */
+    }
+
+    /* NAVBAR */
+   .navbar {
+     background: transparent !important;
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     transition: all 0.4s ease;
+     padding: 20px 0;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+   }
+   .navbar.scrolled {
+     background: rgba(255, 255, 255, 0.7) !important;
+     padding: 12px 0;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+     border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+   .navbar-dark .nav-link {
+     color: var(--dark) !important;
+     font-weight: 600;
+     transition: 0.3s;
+   }
+   .navbar.scrolled .nav-link {
+     color: var(--dark) !important;
+   }
+   
+   /* Mobile Navbar Adjustments */
+   @media (max-width: 991px) {
+     .navbar-collapse {
+       background: rgba(255, 255, 255, 0.95);
+       backdrop-filter: blur(20px);
+       -webkit-backdrop-filter: blur(20px);
+       margin-top: 15px;
+       padding: 20px;
+       border-radius: 20px;
+       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+       border: 1px solid rgba(255,255,255,0.2);
+     }
+     .navbar-toggler {
+       border: none;
+       background: rgba(0, 74, 128, 0.1);
+       padding: 8px;
+       border-radius: 10px;
+     }
+     .navbar-toggler:focus { box-shadow: none; }
+     .navbar-toggler-icon {
+       filter: invert(15%) sepia(48%) saturate(4156%) rotate(193deg) brightness(92%) contrast(101%);
+     }
+   }
+   /* COMING SOON SECTION */
+   .coming-soon-section {
+     padding: 100px 0;
+     background: var(--gradient-bg);
+     text-align: center;
+     position: relative;
+     overflow: hidden;
+   }
+   .coming-soon-card {
+     background: var(--glass-bg);
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+     padding: 60px 40px;
+     border-radius: 40px;
+     border: 1px solid var(--glass-border);
+     max-width: 800px;
+     margin: 0 auto;
+     box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+     position: relative;
+     z-index: 1;
+   }
+   .coming-soon-card h2 {
+     font-size: 3.5rem;
+     font-weight: 900;
+     margin-bottom: 20px;
+     background: linear-gradient(135deg, var(--primary), #8b5cf6);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     letter-spacing: -2px;
+   }
+   .coming-soon-card p {
+   font-size: 1.2rem;
+   color: var(--secondary);
+   margin-bottom: 40px;
+ }
+ .curious-loader {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 30px;
+ }
+ .loader-dot {
+   width: 12px;
+   height: 12px;
+   background: var(--primary);
+   border-radius: 50%;
+   animation: dot-pulse 1.5s infinite ease-in-out;
+ }
+ .loader-dot:nth-child(2) { animation-delay: 0.2s; }
+ .loader-dot:nth-child(3) { animation-delay: 0.4s; }
+ @keyframes dot-pulse {
+   0%, 100% { transform: scale(1); opacity: 0.5; }
+   50% { transform: scale(1.5); opacity: 1; }
+ }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-orange);
+    }
+
+
+    /* CONTACT US SECTION (Same as PNGC) */
+    .contact-section {
+      background: #071a2d;
+      padding: 80px 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container-contact {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-title {
+      color: white;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+    }
+
+    .contact-line {
+      width: 180px;
+      height: 2px;
+      background: #0d6efd;
+      margin: auto;
+      margin-bottom: 60px;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    /* CONTACT INFO BOX */
+    .contact-info-box {
+      padding: 40px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-blue));
+      color: white;
+      text-align: left;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .info-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 35px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-text h4 {
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .info-text p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1200px) {
+      .hero h1 { font-size: 3.5rem; }
+      .stack-card { width: 320px; }
+    }
+
+    @media (max-width: 992px) {
+      .hero { padding: 100px 0 50px 0; text-align: center; }
+      .hero p { margin: 0 auto 30px; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { height: 420px; margin-top: 30px; }
+      .stack-card { 
+        width: 90%; 
+        max-width: 340px; 
+        left: 0 !important; 
+        right: 0 !important; 
+        margin-left: auto !important; 
+        margin-right: auto !important; 
+      }
+      .card-back { top: 0; transform: rotate(2deg); }
+      .card-front { top: 70px; transform: rotate(-1deg); }
+      
+      .about-visual img { max-height: 300px; }
+      .coming-soon-card h2 { font-size: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 10px 0; }
+      .navbar-brand { font-size: 1.5rem !important; }
+      .navbar-brand img { height: 35px; }
+      .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
+      .hero p { font-size: 1rem; }
+      .section-title { font-size: 1.8rem; }
+      .value-box { padding: 20px; }
+      .contact-title { font-size: 28px; }
+      .contact-info-box { padding: 25px 20px; }
+      .info-item { gap: 12px; margin-bottom: 25px; }
+      .info-icon { width: 40px; height: 40px; font-size: 18px; }
+      .coming-soon-card { padding: 30px 15px; }
+      .coming-soon-card h2 { font-size: 2rem; }
+      .app-card { padding: 30px 20px; }
+      .app-card img { height: 140px; }
+      .stat-badge { font-size: 0.7rem; padding: 6px 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-visual { height: 350px; }
+      .stack-card { padding: 20px; }
+      .card-title { font-size: 1.2rem; }
+      .card-list li { font-size: 0.8rem; }
+      .btn-lg { padding: 12px 20px; font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <img src="assets/images/logo-removebg.png" alt="ArknX Logo" height="45">
+        <a class="navbar-brand ms-2" href="#home">Arkn<span>X</span></a>
+      </div>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vision-mission">Vision & Mission</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Why Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#our-apps">Our Apps</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#services">Services</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-container">
+      <div class="row align-items-center">
+        <!-- Left Content -->
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="hero-badge">
+            Secure • Reliable • Scalable
+          </div>
+          <h1>Simplifying Life, One Tap at a Time.</h1>
+          <p>
+            The ultimate all-in-one ecosystem connecting you to essential urban services through a single, powerful, and secure platform.
+          </p>
+          
+          <div class="d-flex gap-3 mb-5">
+            <a href="#our-apps" class="btn btn-primary btn-lg px-4 py-3">Explore Us</a>
+            <a href="#about" class="btn btn-glass btn-lg px-4 py-3">Learn More</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-badge">OTP Authentication</div>
+            <div class="stat-badge">Smart City Ready</div>
+            <div class="stat-badge">Unified Module</div>
+          </div>
+        </div>
+
+        <!-- Right Visual (Glossy Cards) -->
+        <div class="col-lg-5">
+          <div class="hero-visual">
+            <!-- Back Card -->
+            <div class="stack-card card-back">
+              <div class="card-label"><i class="fas fa-circle"></i> Infrastructure</div>
+              <p class="small text-secondary">Secure OTP-based authentication and scalable cloud architecture for smart cities.</p>
+            </div>
+            <!-- Front Card -->
+            <div class="stack-card card-front">
+              <div class="card-label"><i class="fas fa-circle"></i> ArknX Ecosystem</div>
+              <div class="card-title">Everything Unified.</div>
+              <ul class="card-list">
+                <li>Hyper-Local Connectivity</li>
+                <li>Integrated Smart Solutions</li>
+                <li>Future-Ready Ecosystem</li>
+              </ul>
+              <div class="card-footer">
+                <span class="fw-bold text-dark small">24/7 Service Access</span>
+                <span class="badge-premium">All-in-One</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5 overflow-hidden">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h6 class="text-primary fw-bold mb-3">WHO WE ARE</h6>
+          <h2 class="section-title text-start mb-4">Empowering the Future with ArknX</h2>
+          <p class="mb-4">
+            We believe in the power of innovation to transform everyday experiences. Our technology platform seamlessly integrates various services under one umbrella, offering our users the flexibility to access them anytime, anywhere.
+          </p>
+          
+          <ul class="highlight-list">
+            <li class="highlight-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-layer-group"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Unified Platform</h6>
+                <p class="small mb-0 text-secondary">A frictionless end-to-end booking process for all essential services.</p>
+              </div>
+            </li>
+            <li class="highlight-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Security First</h6>
+                <p class="small mb-0 text-secondary">OTP-based authentication ensuring every transaction is safe and secure.</p>
+              </div>
+            </li>
+            <li class="highlight-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-city"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Smart-City Integration</h6>
+                <p class="small mb-0 text-secondary">Designed to evolve with modern urban needs and smart city infrastructures.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="about-visual">
+            <img src="assets/images/logo.png" alt="ArknX Ecosystem" class="img-fluid" style="max-height: 400px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section id="vision-mission" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="value-box vision-card">
+            <h3 class="fw-bold mb-3">Our Vision</h3>
+            <p class="text-secondary">
+              We envision a future where innovation and connectivity empower individuals,
+              simplifying access to essential services, eliminating barriers, and transforming
+              convenience into an effortless, technology-driven lifestyle.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="value-box mission-card">
+            <h3 class="fw-bold mb-3">Our Mission</h3>
+            <p class="text-secondary">
+              Empowering the future through innovation, seamless connectivity, and unmatched
+              convenience, we enhance lives by unifying essential services into one powerful,
+              time-saving platform for all.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Why ArknX?</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-cubes"></i></div>
+            <h5>All-in-One Platform</h5>
+            <p class="small text-secondary">Access multiple services using a single login and interface for maximum efficiency.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-user-shield"></i></div>
+            <h5>Secure & Reliable</h5>
+            <p class="small text-secondary">OTP-based authentication and controlled access protocols ensure safety for everyone.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-chart-line"></i></div>
+            <h5>Scalable Design</h5>
+            <p class="small text-secondary">A robust architecture designed to grow seamlessly with new services and smart-city needs.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-smile-beam"></i></div>
+            <h5>Stakeholder Friendly</h5>
+            <p class="small text-secondary">Dedicated, intuitive modules tailored for Users, Vendors, and Administrators alike.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-lightbulb"></i></div>
+            <h5>Problem Solving</h5>
+            <p class="small text-secondary">Reduces app overload, improves accessibility, and saves precious time every day.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="value-box why-box">
+            <div class="why-icon-wrap"><i class="fas fa-store-alt"></i></div>
+            <h5>Local Empowerment</h5>
+            <p class="small text-secondary">Supports local vendors by bringing their services online and connecting them directly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPS -->
+  <section id="our-apps" class="py-5" style="background: var(--gradient-bg);">
+    <div class="container">
+      <h2 class="section-title text-center">Empowering Every Connection</h2>
+      <p class="text-center mb-5 text-secondary" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 50px;">
+        "Seamlessly bridging the gap between services and needs through a unified digital ecosystem."
+      </p>
+
+      <div class="row g-4">
+
+        <!-- Vendor App -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="app-card app-card-vendor">
+            <img src="assets/images/vendor-app.png" alt="Vendor App" class="mb-4">
+            <h4>Vendor App</h4>
+            <h6 class="text-dark">For Business Owners</h6>
+            <ul>
+              <li>Easily manage orders and inventory</li>
+              <li>Track sales and performance</li>
+              <li>Grow your business online</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Consumer App -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="app-card app-card-consumer">
+            <img src="assets/images/consumer-app.png" alt="Consumer App" class="mb-4">
+            <h4>Consumer App</h4>
+            <h6 class="text-dark">For Customers</h6>
+            <ul>
+              <li>Book services quickly</li>
+              <li>Get instant updates</li>
+              <li>Enjoy seamless and secure payments</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rider App -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="app-card app-card-rider">
+            <img src="assets/images/rider-app.png" alt="Rider App" class="mb-4">
+            <h4>Rider App</h4>
+            <h6 class="text-dark">For Delivery Partners</h6>
+            <ul>
+              <li>Get new delivery tasks</li>
+              <li>Navigate easily with GPS</li>
+              <li>Earn more with flexible schedules</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+   <section id="services-teaser" class="coming-soon-section">
+    <div class="container" data-aos="zoom-in">
+      <div class="coming-soon-card">
+        <div class="curious-loader">
+          <div class="loader-dot"></div>
+          <div class="loader-dot"></div>
+          <div class="loader-dot"></div>
+        </div>
+        <h2>Something Big is Brewing</h2>
+        <p>We are meticulously crafting an extraordinary suite of services designed to redefine your everyday experience. Stay curious, the revelation is just around the corner.</p>
+        <div class="hero-badge" style="margin-bottom: 0;">Stay Tuned</div>
+      </div>
+    </div>
+  </section>
+  <!-- <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Our Services</h2>
+      <p class="text-center mb-5">
+        Everything you need — delivered through one powerful platform.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/food.jpg" alt="Food Delivery">
+            <h5 class="mt-3">Food Delivery</h5>
+            <p>Order delicious food from nearby restaurants with fast delivery.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/grocery.jpg" alt="Grocery Delivery">
+            <h5 class="mt-3">Grocery Delivery</h5>
+            <p>Daily essentials delivered straight to your doorstep.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/pharmacy.jpg" alt="Pharmacy">
+            <h5 class="mt-3">Pharmacy</h5>
+            <p>Safe, secure, and reliable medicine delivery service.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/taxi.jpg" alt="Taxi Booking">
+            <h5 class="mt-3">Taxi Booking</h5>
+            <p>Book rides easily for travel, emergencies, and daily commute.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/logistics.jpg" alt="Logistics">
+            <h5 class="mt-3">Logistics</h5>
+            <p>Parcel booking, courier services, and real-time tracking.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/photography.jpg" alt="Photography">
+            <h5 class="mt-3">Photo & Video</h5>
+            <p>Book professional photographers and videographers for events.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/decor.jpg" alt="Event Decor">
+            <h5 class="mt-3">Event & Decor</h5>
+            <p>Decoration services for birthdays, weddings, and celebrations.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/party.jpg" alt="Book Space">
+            <h5 class="mt-3">Book Space</h5>
+            <p>Convention halls, banquet halls, and auditoriums.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/soyo.jpg" alt="Soyo">
+            <h5 class="mt-3">Soyo</h5>
+            <p>Pubs, parties, lodges, homestays, and leisure bookings.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/farm.jpg" alt="Agri Tech">
+            <h5 class="mt-3">Agri Tech</h5>
+            <p>Smart agriculture solutions supporting farmers and technology.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="service-card">
+            <img src="assets/images/parking.jpg" alt="Parking Slot">
+            <h5 class="mt-3">Parking Slot</h5>
+            <p>Find and book parking spaces easily in busy areas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- CONTACT US -->
+  <section class="contact-section" id="contact">
+    <div class="container-contact">
+      <h2 class="contact-title" data-aos="fade-up">Get in Touch</h2>
+      <div class="contact-line" data-aos="fade-up"></div>
+
+      <div class="contact-wrapper justify-content-center">
+        <!-- INFO BOX -->
+        <div class="contact-info-box" data-aos="zoom-in" style="flex: 0 1 600px; max-width: 100%;">
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="info-text">
+              <h4>ADDRESS</h4>
+              <p>
+                #16, 22nd Main, E cross<br>
+                JC Nagar Kurubarahalli<br>
+                Bangalore 560086<br>
+                <span class="small opacity-75">Behind Valley college of pharamacy</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="info-text">
+              <h4>E-MAIL</h4>
+              <p>info@arknx.in</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="info-text">
+              <h4>WORKING HOURS</h4>
+              <p>MON-SAT 9.00 AM TO 5.00 PM</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="text-center">
+    <!-- <div class="container copyright text-center">
+      <p>© <span>Copyright</span> <span>All Rights Reserved by Arknx</span></p>
+      
+    </div> -->
+        © 2026 ArknX | One App. Every Service.
+        <div class="credits">
+        <small class="block">Developed by <a href="https://wa.me/8123444209?text=Hello%21mr.Yugandhar%21" target="_blank">@thetechyuga</a>.</small>
+      </div>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+
+</body>
+
+</html>
