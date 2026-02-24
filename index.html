@@ -818,6 +818,22 @@
       .card-list li { font-size: 0.8rem; }
       .btn-lg { padding: 12px 20px; font-size: 1rem; }
     }
+
+    /* Innovation Text Animation */
+    .innovation-text {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards, glow 2s ease-in-out infinite alternate;
+      display: block;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px rgba(0, 74, 128, 0.2); }
+      to { text-shadow: 0 0 20px rgba(0, 74, 128, 0.5); }
+    }
   </style>
 </head>
 
@@ -1103,6 +1119,9 @@
         <h2>Something Big is Brewing</h2>
         <p>We are meticulously crafting an extraordinary suite of services designed to redefine your everyday experience. Stay curious, the revelation is just around the corner.</p>
         <div class="hero-badge" style="margin-bottom: 0;">Stay Tuned</div>
+        <div class="innovation-text" data-aos="fade-up" data-aos-delay="500">
+          "We are revealing our first innovation shortly"
+        </div>
       </div>
     </div>
   </section>
