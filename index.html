@@ -867,6 +867,7 @@
 
     @media (max-width: 992px) {
       .hero { padding: 100px 0 50px 0; text-align: center; }
+      .hero-container { padding: 0 15px; }
       .hero p { margin: 0 auto 30px; }
       .hero-stats { justify-content: center; }
       .hero-visual { height: 420px; margin-top: 30px; }
@@ -894,7 +895,9 @@
       .navbar { padding: 10px 0; }
       .navbar-brand { font-size: 1.5rem !important; }
       .navbar-brand img { height: 35px; }
-      .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
+      .hero h1 { font-size: 2.2rem; letter-spacing: -1px; line-height: 1.2; }
+      .hero h2 { font-size: 1.8rem; overflow-wrap: break-word; }
+      .hero h3 { font-size: 1.5rem; overflow-wrap: break-word; word-break: break-word; }
       .hero p { font-size: 1rem; }
       .section-title { font-size: 1.8rem; }
       .value-box { padding: 20px; }
@@ -910,7 +913,10 @@
     }
 
     @media (max-width: 480px) {
-      .hero-visual { height: 350px; }
+      .hero h1 { font-size: 1.5rem; letter-spacing: -0.5px; overflow-wrap: break-word; line-height: 1.2; }
+      .hero h2 { font-size: 1.3rem; overflow-wrap: break-word; }
+      .hero h3 { font-size: 1.1rem; overflow-wrap: break-word; word-break: break-all; margin-bottom: 2rem !important; }
+      .hero-visual { height: 320px; }
       .stack-card { padding: 20px; }
       .card-title { font-size: 1.2rem; }
       .card-list li { font-size: 0.8rem; }
@@ -957,7 +963,7 @@
             Secure • Reliable • Scalable
           </div>
           <h1 class="mb-3" style="font-weight: 900; font-style: italic; color: var(--dark);">Now Universe at Fingertip...!!</h1>
-          <h2 class="fw-bold mb-5" style="color: var(--primary) !important;">Everything.Everytime.Everywhere.</h2>
+          <h3 class="fw-bold mb-5" style="color: var(--primary) !important;">Everything.Everytime.Everywhere.</h3>
           <h2 class="mb-0">Simplify Your Life with ArknX</h2>
           <p class="mb-4">
             The ultimate all-in-one ecosystem connecting you to essential urban services through a single, powerful, and secure platform.
