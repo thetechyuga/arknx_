@@ -899,7 +899,8 @@
       }
       .logo-animation-container {
         margin: 0 15px;
-        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 0;
       }
       .shimmer-text {
         font-size: 0.55rem !important;
@@ -932,16 +933,24 @@
     }
 
     @media (max-width: 480px) {
+      .navbar > .container {
+        flex-wrap: nowrap !important;
+      }
+      .navbar-brand {
+        margin-right: 0;
+        font-size: 1.1rem !important;
+      }
       .navbar-logo {
-        height: 70px !important;
-        margin: -10px -5px !important;
+        height: 75px !important;
+        margin: -15px -5px !important;
       }
       .logo-animation-container {
-        margin: 0 10px;
-        flex-grow: 1;
+        margin: 0 8px;
+        flex-shrink: 1;
+        min-width: 0;
       }
       .shimmer-text {
-        font-size: 0.45rem !important;
+        font-size: 0.5rem !important;
         letter-spacing: 0px !important;
         white-space: nowrap !important;
         max-width: none !important;
@@ -962,6 +971,19 @@
       .card-title { font-size: 1.2rem; }
       .card-list li { font-size: 0.8rem; }
       .btn-lg { padding: 12px 20px; font-size: 1rem; }
+    }
+
+    @media (max-width: 320px) {
+      .navbar-logo {
+        height: 60px !important;
+        margin: -10px -5px !important;
+      }
+      .shimmer-text {
+        font-size: 0.4rem !important;
+      }
+      .navbar-toggler {
+        padding: 4px !important;
+      }
     }
 
     .logo-animation-container {
@@ -1020,13 +1042,13 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <div class="d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
         <img src="assets/images/Arknx-removebg.png" alt="Arknx Logo" class="navbar-logo">
         <div class="logo-animation-container">
           <span class="shimmer-text">Experience the Future, Coming Soon..!</span>
           <div class="pulse-bar"></div>
         </div>
-      </div>
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
