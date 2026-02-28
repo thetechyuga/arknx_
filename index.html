@@ -898,11 +898,11 @@
         margin: -35px -10px !important;
       }
       .logo-animation-container {
-        margin-left: 15px;
-        margin-top: 0;
+        margin: 0 15px;
+        flex-grow: 1;
       }
       .shimmer-text {
-        font-size: 0.65rem !important;
+        font-size: 0.55rem !important;
         letter-spacing: 0.2px !important;
         white-space: nowrap !important;
         max-width: none !important;
@@ -937,11 +937,11 @@
         margin: -10px -5px !important;
       }
       .logo-animation-container {
-        margin-left: 10px;
-        margin-top: 0;
+        margin: 0 10px;
+        flex-grow: 1;
       }
       .shimmer-text {
-        font-size: 0.5rem !important;
+        font-size: 0.45rem !important;
         letter-spacing: 0px !important;
         white-space: nowrap !important;
         max-width: none !important;
@@ -965,16 +965,17 @@
     }
 
     .logo-animation-container {
-      margin-left: 30px;
+      margin-left: 40px; /* Space after logo */
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       pointer-events: none;
+      z-index: 5;
     }
 
     .shimmer-text {
-      font-size: 0.9rem;
-      font-weight: 900;
+      font-size: 1rem;
+      font-weight: 800;
       background: linear-gradient(90deg, var(--primary), var(--accent-red), var(--accent-orange), var(--primary));
       background-size: 200% auto;
       -webkit-background-clip: text;
@@ -988,6 +989,7 @@
     .pulse-bar {
       height: 3px;
       width: 100%;
+      max-width: 300px;
       background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
       animation: bar-grow-fixed 3s ease-in-out infinite;
       border-radius: 10px;
@@ -1005,7 +1007,6 @@
     }
 
     .navbar.scrolled .logo-animation-container {
-      margin-left: 20px;
     }
 
     .navbar.scrolled .shimmer-text {
@@ -1025,10 +1026,9 @@
           <span class="shimmer-text">Experience the Future, Coming Soon..!</span>
           <div class="pulse-bar"></div>
         </div>
-        <!-- <a class="navbar-brand ms-2" href="#home">Arkn<span>X</span></a> -->
       </div>
 
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -1098,7 +1098,11 @@
       <!-- Company Name Centered -->
       <div class="row mt-5" data-aos="fade-up">
         <div class="col-12 text-center">
-          <h2 class="fw-bold company-heading" style="color: var(--primary); letter-spacing: 1px;">Arknx Technologies Pvt. Ltd.</h2>
+          <h2 class="fw-bold company-heading" style="color: var(--primary); letter-spacing: 1px;">Arknx Technologies Private Limited</h2>
+          <div class="d-flex flex-column align-items-center mt-2">
+            <span class="shimmer-text">Driven by Innovations</span>
+            <div class="pulse-bar" style="max-width: 200px;"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1442,7 +1446,7 @@
             <div class="info-text">
               <h4>ADDRESS</h4>
               <p>
-                Arknx Technologies Pvt. Ltd.<br>
+                Arknx Technologies Private Limited<br>
                 #16, 22nd Main, E cross<br>
                 JC Nagar Kurubarahalli<br>
                 Bangalore 560086<br>
