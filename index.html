@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ArknX – All-in-One Services App</title>
+  <title>Arknx – All-in-One Services App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="assets/images/logo-removebg.png">
 
@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
   <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -28,7 +28,7 @@
       width: 100%;
     }
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Outfit', sans-serif;
       scroll-behavior: smooth;
     }
 
@@ -575,7 +575,7 @@
     .navbar-brand {
       font-weight: 900 !important;
       font-size: 1.8rem !important;
-      color: var(--primary) !important; /* ArknX Dark Blue */
+      color: var(--primary) !important; /* Arknx Dark Blue */
       letter-spacing: -1.5px;
       display: flex;
       align-items: center;
@@ -586,31 +586,31 @@
     }
 
     .navbar-logo {
-      height: 140px;
+      height: 180px;
       width: auto;
-      margin: -45px 0;
+      margin: -60px -20px;
       transition: all 0.3s ease;
     }
 
     .navbar.scrolled .navbar-logo {
-      height: 100px;
-      margin: -25px 0;
+      height: 130px;
+      margin: -35px -15px;
     }
 
     /* NAVBAR */
    .navbar {
-     background: transparent !important;
+     background: #ffffff !important;
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(10px);
      transition: all 0.4s ease;
      padding: 20px 0;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    }
    .navbar.scrolled {
-     background: rgba(255, 255, 255, 0.7) !important;
+     background: #ffffff !important;
      padding: 12px 0;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-     border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
    .navbar-dark .nav-link {
      color: var(--dark) !important;
      font-weight: 600;
@@ -719,7 +719,7 @@
     .contact-section {
       background: #071a2d;
       padding: 80px 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
 
     .container-contact {
@@ -892,9 +892,27 @@
     @media (max-width: 768px) {
       .ticker-item { font-size: 1rem; margin-right: 40px; }
       .ticker-item img { height: 25px; }
-      .navbar { padding: 10px 0; }
-      .navbar-brand { font-size: 1.5rem !important; }
-      .navbar-brand img { height: 35px; }
+      .navbar { padding: 5px 0; }
+      .navbar-logo {
+        height: 120px !important;
+        margin: -35px -10px !important;
+      }
+      .logo-animation-container {
+        margin-left: 10px;
+        margin-top: 15px;
+      }
+      .shimmer-text {
+        font-size: 0.55rem !important;
+        letter-spacing: 0.2px !important;
+        white-space: nowrap !important;
+        max-width: none !important;
+      }
+      .pulse-bar {
+        height: 2px;
+        margin-top: 2px;
+      }
+      .navbar-brand { font-size: 1.2rem !important; }
+      .navbar-brand img { height: 30px; }
       .hero h1 { font-size: 2.2rem; letter-spacing: -1px; line-height: 1.2; }
       .hero h2 { font-size: 1.8rem; overflow-wrap: break-word; }
       .hero h3 { font-size: 1.5rem; overflow-wrap: break-word; word-break: break-word; }
@@ -913,6 +931,23 @@
     }
 
     @media (max-width: 480px) {
+      .navbar-logo {
+        height: 80px !important;
+        margin: -15px -10px !important;
+      }
+      .logo-animation-container {
+        margin-left: 5px;
+      }
+      .shimmer-text {
+        font-size: 0.45rem !important;
+        letter-spacing: 0px !important;
+        white-space: nowrap !important;
+        max-width: none !important;
+      }
+      .pulse-bar {
+        height: 1px;
+        margin-top: 1px;
+      }
       .hero h1 { font-size: 1.5rem; letter-spacing: -0.5px; overflow-wrap: break-word; line-height: 1.2; }
       .hero h2 { font-size: 1.3rem; overflow-wrap: break-word; }
       .hero h3 { font-size: 1.1rem; overflow-wrap: break-word; word-break: break-all; margin-bottom: 2rem !important; }
@@ -921,6 +956,54 @@
       .card-title { font-size: 1.2rem; }
       .card-list li { font-size: 0.8rem; }
       .btn-lg { padding: 12px 20px; font-size: 1rem; }
+    }
+
+    .logo-animation-container {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      pointer-events: none;
+    }
+
+    .shimmer-text {
+      font-size: 0.9rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--primary), var(--accent-red), var(--accent-orange), var(--primary));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 2s linear infinite;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pulse-bar {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+      animation: bar-grow-fixed 3s ease-in-out infinite;
+      border-radius: 10px;
+      margin-top: 4px;
+      box-shadow: 0 0 10px rgba(228, 30, 38, 0.5);
+    }
+
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+
+    @keyframes bar-grow-fixed {
+      0%, 100% { width: 0; opacity: 0; }
+      50% { width: 100%; opacity: 1; }
+    }
+
+    .navbar.scrolled .logo-animation-container {
+      margin-left: 15px;
+    }
+
+    .navbar.scrolled .shimmer-text {
+      font-size: 0.75rem;
     }
   </style>
 </head>
@@ -931,7 +1014,11 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <div class="d-flex align-items-center">
-        <img src="assets/images/ArknX-removebg.png" alt="ArknX Logo" class="navbar-logo">
+        <img src="assets/images/Arknx-removebg.png" alt="Arknx Logo" class="navbar-logo">
+        <div class="logo-animation-container">
+          <span class="shimmer-text">Experience the Future, Coming Soon..!</span>
+          <div class="pulse-bar"></div>
+        </div>
         <!-- <a class="navbar-brand ms-2" href="#home">Arkn<span>X</span></a> -->
       </div>
 
@@ -964,7 +1051,7 @@
           </div>
           <h1 class="mb-3" style="font-weight: 900; font-style: italic; color: var(--dark);">Now Universe at Fingertip...!!</h1>
           <h3 class="fw-bold mb-5" style="color: var(--primary) !important;">Everything.Everytime.Everywhere.</h3>
-          <h2 class="mb-0">Simplify Your Life with ArknX</h2>
+          <h2 class="mb-0">Simplify Your Life with Arknx</h2>
           <p class="mb-4">
             The ultimate all-in-one ecosystem connecting you to essential urban services through a single, powerful, and secure platform.
           </p>
@@ -987,7 +1074,7 @@
             </div>
             <!-- Front Card -->
             <div class="stack-card card-front">
-              <div class="card-label"><i class="fas fa-circle"></i> ArknX Ecosystem</div>
+              <div class="card-label"><i class="fas fa-circle"></i> Arknx Ecosystem</div>
               <div class="card-title">Everything Unified.</div>
               <ul class="card-list">
                 <li>Hyper-Local Connectivity</li>
@@ -1002,6 +1089,12 @@
           </div>
         </div>
       </div>
+      <!-- Company Name Centered -->
+      <div class="row mt-5" data-aos="fade-up">
+        <div class="col-12 text-center">
+          <h2 class="fw-bold" style="color: var(--primary); letter-spacing: 1px;">Arknx Technologies Pvt. Ltd.</h2>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1011,7 +1104,7 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6" data-aos="fade-right">
           <h6 class="text-primary fw-bold mb-3">WHO WE ARE</h6>
-          <h3 class="section-title text-start mb-4">Empowering the Future with ArknX</h3>
+          <h3 class="section-title text-start mb-4">Empowering the Future with Arknx</h3>
           <p class="mb-4">
             As a Unified Multi-Service Platform,We believe in the power of innovation to transform everyday experiences. Our technology platform seamlessly integrates various services under one umbrella, offering our users the flexibility to access them anytime, anywhere.
           </p>
@@ -1043,7 +1136,7 @@
         
         <div class="col-lg-6" data-aos="fade-left">
           <div class="about-visual">
-            <img src="assets/images/WhoWeAre.jpeg" alt="Who We Are - ArknX" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px; transform: rotate(2deg); border: 8px solid #fff;">
+            <img src="assets/images/WhoWeAre.jpeg" alt="Who We Are - Arknx" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px; transform: rotate(2deg); border: 8px solid #fff;">
           </div>
         </div>
       </div>
@@ -1086,7 +1179,7 @@
   <!-- WHY US -->
   <section id="why" class="py-5">
     <div class="container">
-      <h2 class="section-title text-center">Why ArknX?</h2>
+      <h2 class="section-title text-center">Why Arknx?</h2>
       <div class="row g-4">
 
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -1216,13 +1309,13 @@
   <!-- TICKER SECTION -->
   <div class="ticker-container">
     <div class="ticker-content">
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> ArknX Core Service <span class="ticker-badge">Launching Soon</span></div>
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> Next-Gen Urban Ecosystem <span class="ticker-badge">Coming Shortly</span></div>
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> A Unified Multi-Service Platform <span class="ticker-badge">Stay Tuned</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> Arknx Core Service <span class="ticker-badge">Launching Soon</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> Next-Gen Urban Ecosystem <span class="ticker-badge">Coming Shortly</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> A Unified Multi-Service Platform <span class="ticker-badge">Stay Tuned</span></div>
       <!-- Duplicate for seamless scroll -->
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> ArknX Core Service <span class="ticker-badge">Launching Soon</span></div>
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> Next-Gen Urban Ecosystem <span class="ticker-badge">Coming Shortly</span></div>
-      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="ArknX"> A Unified Multi-Service Platform <span class="ticker-badge">Stay Tuned</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> Arknx Core Service <span class="ticker-badge">Launching Soon</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> Next-Gen Urban Ecosystem <span class="ticker-badge">Coming Shortly</span></div>
+      <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> A Unified Multi-Service Platform <span class="ticker-badge">Stay Tuned</span></div>
     </div>
   </div>
 
@@ -1334,7 +1427,7 @@
 
       <div class="contact-wrapper justify-content-center">
         <!-- INFO BOX -->
-        <div class="contact-info-box" data-aos="zoom-in" style="flex: 0 1 600px; max-width: 100%;">
+        <div class="contact-info-box" data-aos="zoom-in" style="flex: 0 1 500px; max-width: 100%;">
           
           <div class="info-item">
             <div class="info-icon">
@@ -1343,7 +1436,7 @@
             <div class="info-text">
               <h4>ADDRESS</h4>
               <p>
-                ArknX Technologies Pvt. Ltd.<br>
+                Arknx Technologies Pvt. Ltd.<br>
                 #16, 22nd Main, E cross<br>
                 JC Nagar Kurubarahalli<br>
                 Bangalore 560086<br>
@@ -1362,16 +1455,6 @@
             </div>
           </div>
 
-          <div class="info-item">
-            <div class="info-icon">
-              <i class="fa-solid fa-clock"></i>
-            </div>
-            <div class="info-text">
-              <h4>WORKING HOURS</h4>
-              <p>MON-SAT 9.00 AM TO 5.00 PM</p>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -1384,7 +1467,7 @@
       <p>© <span>Copyright</span> <span>All Rights Reserved by Arknx</span></p>
       
     </div> -->
-        © 2026 ArknX | One App. Every Service.
+        © 2026 Arknx | One App. Every Service.
         <!-- <div class="credits"> -->
         <!-- <small class="block">Developed by <a href="https://wa.me/8123444209?text=Hello%21mr.Yugandhar%21" target="_blank">@thetechyuga</a>.</small> -->
       <!-- </div> -->
