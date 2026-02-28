@@ -913,18 +913,19 @@
       }
       .navbar-brand { font-size: 1.2rem !important; }
       .navbar-brand img { height: 30px; }
-      .hero h1 { font-size: 2.2rem; letter-spacing: -1px; line-height: 1.2; }
-      .hero h2 { font-size: 1.8rem; overflow-wrap: break-word; }
-      .hero h3 { font-size: 1.5rem; overflow-wrap: break-word; word-break: break-word; }
-      .hero p { font-size: 1rem; }
-      .section-title { font-size: 1.8rem; }
+      .hero h1 { font-size: 1.8rem; letter-spacing: -0.5px; line-height: 1.2; white-space: nowrap; }
+      .hero h2 { font-size: 1.4rem; white-space: nowrap; }
+      .hero h3 { font-size: 1.2rem; white-space: nowrap; }
+      .company-heading { font-size: 1.5rem !important; white-space: nowrap; }
+      .hero p { font-size: 0.95rem; }
+      .section-title { font-size: 1.8rem; white-space: nowrap; }
       .value-box { padding: 20px; }
-      .contact-title { font-size: 28px; }
+      .contact-title { font-size: 28px; white-space: nowrap; }
       .contact-info-box { padding: 25px 20px; }
       .info-item { gap: 12px; margin-bottom: 25px; }
       .info-icon { width: 40px; height: 40px; font-size: 18px; }
       .coming-soon-card { padding: 30px 15px; }
-      .coming-soon-card h2 { font-size: 2rem; }
+      .coming-soon-card h2 { font-size: 2rem; white-space: nowrap; }
       .app-card { padding: 30px 20px; }
       .app-card img { height: 140px; }
       .stat-badge { font-size: 0.7rem; padding: 6px 12px; }
@@ -948,9 +949,13 @@
         height: 1px;
         margin-top: 1px;
       }
-      .hero h1 { font-size: 1.5rem; letter-spacing: -0.5px; overflow-wrap: break-word; line-height: 1.2; }
-      .hero h2 { font-size: 1.3rem; overflow-wrap: break-word; }
-      .hero h3 { font-size: 1.1rem; overflow-wrap: break-word; word-break: break-all; margin-bottom: 2rem !important; }
+      .hero h1 { font-size: 1.1rem; letter-spacing: -0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .hero h2 { font-size: 0.95rem; white-space: nowrap; }
+      .hero h3 { font-size: 0.85rem; white-space: nowrap; margin-bottom: 2rem !important; }
+      .company-heading { font-size: 1rem !important; white-space: nowrap; }
+      .section-title { font-size: 1.3rem; white-space: nowrap; }
+      .contact-title { font-size: 20px; white-space: nowrap; }
+      .coming-soon-card h2 { font-size: 1.4rem; white-space: nowrap; }
       .hero-visual { height: 320px; }
       .stack-card { padding: 20px; }
       .card-title { font-size: 1.2rem; }
@@ -1092,7 +1097,7 @@
       <!-- Company Name Centered -->
       <div class="row mt-5" data-aos="fade-up">
         <div class="col-12 text-center">
-          <h2 class="fw-bold" style="color: var(--primary); letter-spacing: 1px;">Arknx Technologies Pvt. Ltd.</h2>
+          <h2 class="fw-bold company-heading" style="color: var(--primary); letter-spacing: 1px;">Arknx Technologies Pvt. Ltd.</h2>
         </div>
       </div>
     </div>
