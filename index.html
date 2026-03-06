@@ -180,6 +180,20 @@
       overflow: hidden;
     }
 
+    @media (max-width: 768px) {
+      .hero {
+        padding: 100px 0 40px 0;
+        min-height: auto;
+      }
+      .hero-visual {
+        margin-top: 40px;
+        order: 2;
+      }
+      .hero-container .row > div:first-child {
+        order: 1;
+      }
+    }
+
     /* Animated Liquid Blobs */
     .hero::after {
       content: "";
@@ -397,6 +411,31 @@
       margin-bottom: 40px;
       color: var(--dark);
       letter-spacing: -1px;
+    }
+
+    /* Horizontal Scroll for Mobile */
+    @media (max-width: 767px) {
+      .flex-nowrap-mobile {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+        scroll-snap-type: x mandatory;
+      }
+      .flex-nowrap-mobile > [class*="col-"] {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: start;
+      }
+      /* Hide scrollbar */
+      .flex-nowrap-mobile::-webkit-scrollbar {
+        display: none;
+      }
+      .flex-nowrap-mobile {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     }
 
     /* VALUE BOX (Glossy) */
@@ -808,6 +847,13 @@ gap:60px;
 margin-bottom:80px;
 }
 
+@media (max-width: 768px) {
+  .market-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
 .problem-list{
 list-style:none;
 padding:0;
@@ -845,6 +891,13 @@ display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:30px;
 margin-top:40px;
+}
+
+@media (max-width: 768px) {
+  .scalability-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .scale-card{
@@ -1083,19 +1136,19 @@ color:#1e3a8a;
       }
       .navbar-brand { font-size: 1.2rem !important; }
       .navbar-brand img { height: 30px; }
-      .hero h1 { font-size: 2.1rem; letter-spacing: -0.5px; line-height: 1.2; white-space: nowrap; }
-      .hero h2 { font-size: 1.7rem; white-space: nowrap; }
-      .hero h3 { font-size: 1.5rem; white-space: nowrap; }
-      .company-heading { font-size: 1.8rem !important; white-space: nowrap; }
+      .hero h1 { font-size: 2.1rem; letter-spacing: -0.5px; line-height: 1.2; }
+      .hero h2 { font-size: 1.7rem; }
+      .hero h3 { font-size: 1.5rem; }
+      .company-heading { font-size: 1.8rem !important; }
       .hero p { font-size: 1.1rem; }
-      .section-title { font-size: 2.2rem; white-space: nowrap; }
+      .section-title { font-size: 2.2rem; }
       .value-box { padding: 20px; }
-      .contact-title { font-size: 32px; white-space: nowrap; }
+      .contact-title { font-size: 32px; }
       .contact-info-box { padding: 25px 20px; }
       .info-item { gap: 12px; margin-bottom: 25px; }
       .info-icon { width: 40px; height: 40px; font-size: 18px; }
       .coming-soon-card { padding: 30px 15px; }
-      .coming-soon-card h2 { font-size: 2.4rem; white-space: nowrap; }
+      .coming-soon-card h2 { font-size: 2.4rem; }
       .app-card { padding: 30px 20px; }
       .app-card img { height: 140px; }
       .stat-badge { font-size: 0.7rem; padding: 6px 12px; }
@@ -1124,22 +1177,19 @@ color:#1e3a8a;
       .shimmer-text {
         font-size: 0.65rem !important;
         letter-spacing: 0.1px !important;
-        white-space: nowrap !important;
-        overflow: hidden;
-        text-overflow: ellipsis;
         max-width: 150px !important;
       }
       .pulse-bar {
         height: 1px;
         margin-top: 1px;
       }
-      .hero h1 { font-size: 1.3rem; letter-spacing: -0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .hero h2 { font-size: 1.1rem; white-space: nowrap; }
-      .hero h3 { font-size: 1rem; white-space: nowrap; margin-bottom: 2rem !important; }
-      .company-heading { font-size: 1rem !important; white-space: nowrap; }
-      .section-title { font-size: 1.2rem; white-space: nowrap; }
-      .contact-title { font-size: 22px; white-space: nowrap; }
-      .coming-soon-card h2 { font-size: 1.6rem; white-space: nowrap; }
+      .hero h1 { font-size: 1.3rem; letter-spacing: -0.5px; }
+      .hero h2 { font-size: 1.1rem; }
+      .hero h3 { font-size: 1rem; margin-bottom: 2rem !important; }
+      .company-heading { font-size: 1rem !important; }
+      .section-title { font-size: 1.2rem; }
+      .contact-title { font-size: 22px; }
+      .coming-soon-card h2 { font-size: 1.6rem; }
       .hero-visual { height: 320px; }
       .stack-card { padding: 20px; }
       .card-title { font-size: 1.2rem; }
@@ -1383,12 +1433,12 @@ color:#1e3a8a;
   </section>
 
   <!-- WHY US -->
-   <section id="why" class="py-5">
+  <section id="why" class="py-3">
     <div class="container">
-      <h2 class="section-title text-center">Why Arknx?</h2>
-      <div class="row g-4">
-
-        <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="section-title text-center fs-3 mb-3">Why Arknx?</h2>
+      <div class="row g-4 flex-nowrap-mobile">
+        
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-cubes"></i></div>
             <h5>All-in-One Platform</h5>
@@ -1396,7 +1446,7 @@ color:#1e3a8a;
           </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-user-shield"></i></div>
             <h5>Secure & Reliable</h5>
@@ -1404,7 +1454,7 @@ color:#1e3a8a;
           </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-chart-line"></i></div>
             <h5>Scalable Design</h5>
@@ -1412,7 +1462,7 @@ color:#1e3a8a;
           </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="400">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-smile-beam"></i></div>
             <h5>Stakeholder Friendly</h5>
@@ -1420,7 +1470,7 @@ color:#1e3a8a;
           </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="500">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-lightbulb"></i></div>
             <h5>Problem Solving</h5>
@@ -1428,7 +1478,7 @@ color:#1e3a8a;
           </div>
         </div>
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="600">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-store-alt"></i></div>
             <h5>Local Empowerment</h5>
@@ -1438,9 +1488,10 @@ color:#1e3a8a;
 
       </div>
     </div>
-  </section> --> 
+  </section>
+
   <!-- <section class="problem-section">
-<div class="container"> -->
+    <div class="container"> -->
 
 <h2 class="section-title text-center mb-5">
 The Digital Marketplace is Fragmented
