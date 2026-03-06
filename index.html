@@ -586,15 +586,15 @@
     }
 
     .navbar-logo {
-      height: 180px;
+      height: 90px;
       width: auto;
-      margin: -60px -20px;
+      margin: 0;
       transition: all 0.3s ease;
     }
 
     .navbar.scrolled .navbar-logo {
-      height: 130px;
-      margin: -35px -15px;
+      height: 70px;
+      margin: 0;
     }
 
     /* NAVBAR */
@@ -603,7 +603,7 @@
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(10px);
      transition: all 0.4s ease;
-     padding: 20px 0;
+     padding: 10px 0;
      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    }
    .navbar.scrolled {
@@ -614,13 +614,19 @@
    .navbar-dark .nav-link {
      color: var(--dark) !important;
      font-weight: 600;
+     padding: 0.5rem 0.8rem !important;
      transition: 0.3s;
    }
    .navbar.scrolled .nav-link {
      color: var(--dark) !important;
    }
    
-   /* Mobile Navbar Adjustments */
+   @media (min-width: 992px) {
+     .navbar-nav {
+       flex-direction: row !important;
+       flex-wrap: nowrap !important;
+     }
+   }
    @media (max-width: 991px) {
      .navbar-collapse {
        background: rgba(255, 255, 255, 0.95);
@@ -894,11 +900,11 @@
       .ticker-item img { height: 25px; }
       .navbar { padding: 5px 0; }
       .navbar-logo {
-        height: 120px !important;
-        margin: -35px -10px !important;
+        height: 50px !important;
+        margin: 0 !important;
       }
       .logo-animation-container {
-        margin: 0 15px;
+        margin: 0 10px;
         flex-shrink: 1;
         min-width: 0;
       }
@@ -934,15 +940,18 @@
 
     @media (max-width: 480px) {
       .navbar > .container {
-        flex-wrap: nowrap !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
       }
       .navbar-brand {
         margin-right: 0;
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+        flex: 1;
+        min-width: 0;
       }
       .navbar-logo {
-        height: 75px !important;
-        margin: -15px -5px !important;
+        height: 40px !important;
+        margin: 0 !important;
       }
       .logo-animation-container {
         margin: 0 8px;
@@ -950,10 +959,12 @@
         min-width: 0;
       }
       .shimmer-text {
-        font-size: 0.5rem !important;
-        letter-spacing: 0px !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 0.1px !important;
         white-space: nowrap !important;
-        max-width: none !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px !important;
       }
       .pulse-bar {
         height: 1px;
@@ -975,11 +986,11 @@
 
     @media (max-width: 320px) {
       .navbar-logo {
-        height: 60px !important;
-        margin: -10px -5px !important;
+        height: 35px !important;
+        margin: 0 !important;
       }
-      .shimmer-text {
-        font-size: 0.4rem !important;
+      .logo-animation-container {
+        margin-left: 5px !important;
       }
       .navbar-toggler {
         padding: 4px !important;
@@ -987,7 +998,7 @@
     }
 
     .logo-animation-container {
-      margin-left: 40px; /* Space after logo */
+      margin-left: 25px; /* Space after logo */
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -996,14 +1007,14 @@
     }
 
     .shimmer-text {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 800;
       background: linear-gradient(90deg, var(--primary), var(--accent-red), var(--accent-orange), var(--primary));
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shimmer 2s linear infinite;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -1011,11 +1022,11 @@
     .pulse-bar {
       height: 3px;
       width: 100%;
-      max-width: 300px;
+      max-width: 200px;
       background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
       animation: bar-grow-fixed 3s ease-in-out infinite;
       border-radius: 10px;
-      margin-top: 4px;
+      margin-top: 2px;
       box-shadow: 0 0 10px rgba(228, 30, 38, 0.5);
     }
 
@@ -1472,6 +1483,8 @@
                 #16, 22nd Main, E cross<br>
                 JC Nagar Kurubarahalli<br>
                 Bangalore 560086<br>
+                CIN: U62090KA2025PTC212093<br>
+                GSTIN: 29ABECA3051D1Z1<br>
                 <span class="small opacity-75">Behind Valley college of pharamacy</span>
               </p>
             </div>
