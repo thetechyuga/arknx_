@@ -765,37 +765,125 @@
   font-size:0.95rem;
 }
 
-/* STATS SECTION */
-
-.stats-section{
-  padding:100px 0;
-  background:var(--gradient-bg);
+.market-section{
+padding:100px 8%;
+background:#f8fafc;
+font-family: 'Poppins', sans-serif;
 }
 
-.stat-card{
-  text-align:center;
-  padding:40px 20px;
-  border-radius:20px;
-  background:#fff;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  transition:all .4s ease;
+.container{
+max-width:1200px;
+margin:auto;
 }
 
-.stat-card:hover{
-  transform:translateY(-10px);
+.section-badge{
+display:inline-block;
+background:#dbeafe;
+color:#1e40af;
+padding:6px 14px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+margin-bottom:10px;
 }
 
-.stat-number{
-  font-size:3rem;
-  font-weight:900;
-  color:var(--primary);
+.section-title{
+font-size:42px;
+font-weight:700;
+margin-bottom:10px;
+color:#111827;
 }
 
-.stat-label{
-  font-weight:600;
-  color:var(--secondary);
+.section-subtitle{
+font-size:18px;
+color:#6b7280;
+max-width:700px;
+margin-bottom:40px;
 }
 
+.market-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+margin-bottom:80px;
+}
+
+.problem-list{
+list-style:none;
+padding:0;
+margin-top:20px;
+}
+
+.problem-list li{
+font-size:18px;
+padding:12px 0;
+border-bottom:1px solid #e5e7eb;
+position:relative;
+padding-left:30px;
+}
+
+.problem-list li:before{
+content:"➜";
+position:absolute;
+left:0;
+color:#6366f1;
+font-weight:bold;
+}
+
+.market-right p{
+font-size:18px;
+color:#4b5563;
+line-height:1.7;
+}
+
+.scalability-section{
+margin-top:40px;
+}
+
+.scalability-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+.scale-card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+text-align:center;
+transition:0.3s;
+}
+
+.scale-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.icon{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.scale-card h4{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.scale-card p{
+color:#6b7280;
+font-size:15px;
+}
+
+.ecosystem-box{
+margin-top:40px;
+background:#e0f2fe;
+padding:25px;
+border-radius:15px;
+font-size:17px;
+color:#1e3a8a;
+}
     /* CONTACT US SECTION (Same as PNGC) */
     .contact-section {
       background: #071a2d;
@@ -1465,48 +1553,91 @@ Manage customers, analytics and operations.
 </div>
 </section>
 
+<section class="market-section">
 
-
-<!-- STATS SECTION -->
-
-<section class="stats-section">
 <div class="container">
 
-<h2 class="section-title text-center mb-5">
-Our Ecosystem
-</h2>
+<div class="section-badge">MARKET OPPORTUNITY</div>
 
-<div class="row g-4">
+<h2 class="section-title">Market Opportunity</h2>
 
-<div class="col-md-3 col-6">
-<div class="stat-card">
-<div class="stat-number">10K+</div>
-<div class="stat-label">Businesses</div>
-</div>
-</div>
+<p class="section-subtitle">
+The rapid growth of digital commerce and online services has created a 
+<strong>massive demand</strong> for integrated digital platforms.
+</p>
 
-<div class="col-md-3 col-6">
-<div class="stat-card">
-<div class="stat-number">1M+</div>
-<div class="stat-label">Consumers</div>
-</div>
-</div>
+<div class="market-grid">
 
-<div class="col-md-3 col-6">
-<div class="stat-card">
-<div class="stat-number">500+</div>
-<div class="stat-label">Service Providers</div>
-</div>
-</div>
+<div class="market-left">
 
-<div class="col-md-3 col-6">
-<div class="stat-card">
-<div class="stat-number">100+</div>
-<div class="stat-label">Cities</div>
-</div>
-</div>
+<h3>SMEs Require Solutions to Manage</h3>
+
+<ul class="problem-list">
+<li>Sales</li>
+<li>Supply Chains</li>
+<li>Service Delivery</li>
+<li>Logistics</li>
+</ul>
 
 </div>
+
+<div class="market-right">
+
+<h3>ARKNX as the Answer</h3>
+
+<p>
+A unified digital platform like <strong>ARKNX</strong> provides a scalable
+infrastructure to support growing demand from 
+<strong>small and medium enterprises</strong> across the country.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="scalability-section">
+
+<div class="section-badge">SCALABILITY</div>
+
+<h2 class="section-title">Built to Scale</h2>
+
+<p class="section-subtitle">
+The platform is built using a <strong>modular service-based architecture</strong>
+that allows rapid expansion.
+</p>
+
+<div class="scalability-grid">
+
+<div class="scale-card">
+<div class="icon">🏙️</div>
+<h4>Multi-City Deployment</h4>
+<p>Deployment across multiple cities and regions</p>
+</div>
+
+<div class="scale-card">
+<div class="icon">🌐</div>
+<h4>Cross Platform Integration</h4>
+<p>Integration across Android, iOS and Web platforms</p>
+</div>
+
+<div class="scale-card">
+<div class="icon">⚙️</div>
+<h4>Modular Service Addition</h4>
+<p>Modular architecture allows new services to be added easily</p>
+</div>
+
+</div>
+
+<div class="ecosystem-box">
+
+The <strong>Consumer–Merchant–Driver ecosystem</strong> creates a strong 
+network effect, allowing the platform to scale efficiently.
+
+</div>
+
+</div>
+
 </div>
 </section>
 
