@@ -719,7 +719,82 @@
     footer a:hover {
       color: var(--accent-orange);
     }
+    /* PROBLEM / SOLUTION SECTION */
 
+.problem-section,
+.solution-section{
+  padding:100px 0;
+}
+
+.problem-card,
+.solution-card{
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border-radius:24px;
+  padding:40px 30px;
+  border:1px solid rgba(255,255,255,0.6);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:all .4s ease;
+  height:100%;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.problem-card:hover,
+.solution-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.problem-icon,
+.solution-icon{
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+
+.problem-card h5,
+.solution-card h5{
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.problem-card p,
+.solution-card p{
+  color:var(--secondary);
+  font-size:0.95rem;
+}
+
+/* STATS SECTION */
+
+.stats-section{
+  padding:100px 0;
+  background:var(--gradient-bg);
+}
+
+.stat-card{
+  text-align:center;
+  padding:40px 20px;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:all .4s ease;
+}
+
+.stat-card:hover{
+  transform:translateY(-10px);
+}
+
+.stat-number{
+  font-size:3rem;
+  font-weight:900;
+  color:var(--primary);
+}
+
+.stat-label{
+  font-weight:600;
+  color:var(--secondary);
+}
 
     /* CONTACT US SECTION (Same as PNGC) */
     .contact-section {
@@ -1196,9 +1271,8 @@
             <h3 class="fw-bold mb-2">Our Vision</h3>
             <div class="mb-3"><i class="bi bi-eye"></i></div>
             <p class="text-secondary">
-              We envision a future where innovation and connectivity empower individuals,
-              simplifying access to essential services, eliminating barriers, and transforming
-              convenience into an effortless, technology-driven lifestyle.
+              We envision is to build a unified digital ecosystem that integrates 
+              commerce, services, and logistics into a single scalable platform.
             </p>
           </div>
         </div>
@@ -1208,9 +1282,10 @@
             <h3 class="fw-bold mb-2">Our Mission</h3>
             <div class="mb-3"><i class="bi bi-rocket-takeoff"></i></div>
             <p class="text-secondary">
-              Empowering the future through innovation, seamless connectivity, and unmatched
-              convenience, we enhance lives by unifying essential services into one powerful,
-              time-saving platform for all.
+              ARKNX aims to simplify digital operations for businesses and daily 
+              services for consumers by leveraging advanced technology, cross
+              platform integration, and scalable infrastructure.
+
             </p>
           </div>
         </div>
@@ -1220,12 +1295,12 @@
   </section>
 
   <!-- WHY US -->
-  <section id="why" class="py-5">
+   <section id="why" class="py-5">
     <div class="container">
       <h2 class="section-title text-center">Why Arknx?</h2>
       <div class="row g-4">
 
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="value-box why-box">
             <div class="why-icon-wrap"><i class="fas fa-cubes"></i></div>
             <h5>All-in-One Platform</h5>
@@ -1275,14 +1350,172 @@
 
       </div>
     </div>
-  </section>
+  </section> --> 
+  <!-- <section class="problem-section">
+<div class="container"> -->
+
+<h2 class="section-title text-center mb-5">
+The Digital Marketplace is Fragmented
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="problem-card">
+<div class="problem-icon text-danger">
+<i class="fas fa-layer-group"></i>
+</div>
+<h5>App Fragmentation</h5>
+<p>
+Businesses must use multiple platforms to manage services and customers.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="problem-card">
+<div class="problem-icon text-warning">
+<i class="fas fa-cogs"></i>
+</div>
+<h5>Operational Inefficiency</h5>
+<p>
+Commerce, services and logistics operate separately.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="problem-card">
+<div class="problem-icon text-primary">
+<i class="fas fa-mobile-alt"></i>
+</div>
+<h5>Consumer Fatigue</h5>
+<p>
+Users constantly switch between apps for daily needs.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- SOLUTION SECTION -->
+
+<section class="solution-section bg-light">
+<div class="container">
+
+<h2 class="section-title text-center mb-5">
+ARKNX Unified Ecosystem
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="solution-card">
+<div class="solution-icon text-primary">
+<i class="fas fa-store"></i>
+</div>
+<h5>Multi-Transaction Support</h5>
+<p>
+The platform integrates multiple 
+services across B2B, B2C, and C2C 
+transactions.
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="solution-card">
+<div class="solution-icon text-success">
+<i class="fas fa-user-check"></i>
+</div>
+<h5>Service Marketplace</h5>
+<p>
+Connect consumers with verified service providers.
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="solution-card">
+<div class="solution-icon text-info">
+<i class="fas fa-truck"></i>
+</div>
+<h5>Logistics Network</h5>
+<p>
+Integrated delivery ecosystem.
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="solution-card">
+<div class="solution-icon text-danger">
+<i class="fas fa-chart-line"></i>
+</div>
+<h5>Business Tools</h5>
+<p>
+Manage customers, analytics and operations.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- STATS SECTION -->
+
+<section class="stats-section">
+<div class="container">
+
+<h2 class="section-title text-center mb-5">
+Our Ecosystem
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-3 col-6">
+<div class="stat-card">
+<div class="stat-number">10K+</div>
+<div class="stat-label">Businesses</div>
+</div>
+</div>
+
+<div class="col-md-3 col-6">
+<div class="stat-card">
+<div class="stat-number">1M+</div>
+<div class="stat-label">Consumers</div>
+</div>
+</div>
+
+<div class="col-md-3 col-6">
+<div class="stat-card">
+<div class="stat-number">500+</div>
+<div class="stat-label">Service Providers</div>
+</div>
+</div>
+
+<div class="col-md-3 col-6">
+<div class="stat-card">
+<div class="stat-number">100+</div>
+<div class="stat-label">Cities</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
 
   <!-- OUR APPS -->
   <section id="our-apps" class="py-5" style="background: var(--gradient-bg);">
     <div class="container">
       <h2 class="section-title text-center">Empowering Every Connection</h2>
       <p class="text-center mb-5 text-secondary" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 50px;">
-        "Seamlessly bridging the gap between services and needs through a unified digital ecosystem."
+        Arknx Technologies is building a hyper-integrated ecosystem consisting of three proprietary platforms
       </p>
 
       <div class="row g-4">
@@ -1291,7 +1524,7 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="app-card app-card-vendor">
             <img src="assets/images/vendor1.jpeg" alt="Vendor App" class="mb-4">
-            <h4>Vendor App</h4>
+            <h4>Merchant Management Portal</h4>
             <h6 class="text-dark">For Business Owners</h6>
             <ul>
               <li>Easily manage orders and inventory</li>
@@ -1305,7 +1538,7 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="app-card app-card-consumer">
             <img src="assets/images/consumer1.jpeg" alt="Consumer App" class="mb-4">
-            <h4>Consumer App</h4>
+            <h4>Consumer Application</h4>
             <h6 class="text-dark">For Customers</h6>
             <ul>
               <li>Book services quickly</li>
@@ -1319,7 +1552,7 @@
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="app-card app-card-rider">
             <img src="assets/images/rider1.jpeg" alt="Rider App" class="mb-4">
-            <h4>Rider App</h4>
+            <h4>Driver & Logistics Interface</h4>
             <h6 class="text-dark">For Delivery Partners</h6>
             <ul>
               <li>Get new delivery tasks</li>
@@ -1361,105 +1594,6 @@
       <div class="ticker-item"><img src="assets/images/logo-removebg.png" alt="Arknx"> A Unified Multi-Service Platform <span class="ticker-badge">Stay Tuned</span></div>
     </div>
   </div>
-
-  <!-- <section id="services" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center">Our Services</h2>
-      <p class="text-center mb-5">
-        Everything you need — delivered through one powerful platform.
-      </p>
-
-      <div class="row g-4">
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/food.jpg" alt="Food Delivery">
-            <h5 class="mt-3">Food Delivery</h5>
-            <p>Order delicious food from nearby restaurants with fast delivery.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/grocery.jpg" alt="Grocery Delivery">
-            <h5 class="mt-3">Grocery Delivery</h5>
-            <p>Daily essentials delivered straight to your doorstep.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/pharmacy.jpg" alt="Pharmacy">
-            <h5 class="mt-3">Pharmacy</h5>
-            <p>Safe, secure, and reliable medicine delivery service.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/taxi.jpg" alt="Taxi Booking">
-            <h5 class="mt-3">Taxi Booking</h5>
-            <p>Book rides easily for travel, emergencies, and daily commute.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/logistics.jpg" alt="Logistics">
-            <h5 class="mt-3">Logistics</h5>
-            <p>Parcel booking, courier services, and real-time tracking.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/photography.jpg" alt="Photography">
-            <h5 class="mt-3">Photo & Video</h5>
-            <p>Book professional photographers and videographers for events.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/decor.jpg" alt="Event Decor">
-            <h5 class="mt-3">Event & Decor</h5>
-            <p>Decoration services for birthdays, weddings, and celebrations.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/party.jpg" alt="Book Space">
-            <h5 class="mt-3">Book Space</h5>
-            <p>Convention halls, banquet halls, and auditoriums.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/soyo.jpg" alt="Soyo">
-            <h5 class="mt-3">Soyo</h5>
-            <p>Pubs, parties, lodges, homestays, and leisure bookings.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/farm.jpg" alt="Agri Tech">
-            <h5 class="mt-3">Agri Tech</h5>
-            <p>Smart agriculture solutions supporting farmers and technology.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6" data-aos="fade-up">
-          <div class="service-card">
-            <img src="assets/images/parking.jpg" alt="Parking Slot">
-            <h5 class="mt-3">Parking Slot</h5>
-            <p>Find and book parking spaces easily in busy areas.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
 
   <!-- CONTACT US -->
