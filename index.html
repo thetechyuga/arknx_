@@ -43,7 +43,7 @@
       --light-blue: #eff6ff;
       --glass-bg: rgba(255, 255, 255, 0.6);
       --glass-border: rgba(255, 255, 255, 0.5);
-      --section-space: clamp(56px, 8vw, 100px);
+      --section-space: clamp(36px, 5vw, 72px);
       /* Liquid-Glossy Gradient */
       --gradient-bg: radial-gradient(at 0% 0%, #ffffff 0px, transparent 50%),
                      radial-gradient(at 100% 0%, #fff7ed 0px, transparent 50%),
@@ -641,6 +641,7 @@
       height: 84px;
       width: auto;
       margin: 0;
+      object-fit: contain;
       filter: drop-shadow(0 6px 14px rgba(0, 74, 128, 0.2));
       transition: transform 0.35s ease, filter 0.35s ease;
     }
@@ -822,6 +823,12 @@
 .solution-card p{
   color:var(--secondary);
   font-size:0.95rem;
+}
+
+@media (max-width: 768px) {
+  .problem-card {
+    padding: 28px 20px;
+  }
 }
 
 .market-section{
@@ -1041,6 +1048,44 @@ text-align: center;
       opacity: 0.9;
     }
 
+    .social-block {
+      margin-top: 10px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .social-title {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 18px;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: rgba(255,255,255,0.24);
+    }
+
     /* TICKER ANIMATION ENHANCEMENT */
     .ticker-container {
       background: linear-gradient(90deg, var(--primary), #00335c);
@@ -1182,6 +1227,11 @@ text-align: center;
       .contact-info-box { padding: 25px 20px; }
       .info-item { gap: 12px; margin-bottom: 25px; }
       .info-icon { width: 40px; height: 40px; font-size: 18px; }
+      .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
       .coming-soon-card { padding: 30px 15px; }
       .coming-soon-card h2 { font-size: 2.4rem; }
       .app-card { padding: 30px 20px; }
@@ -1317,7 +1367,10 @@ text-align: center;
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#home">
-        <img src="assets/images/Arknx-removebg.png" alt="Arknx Logo" class="navbar-logo">
+        <video class="navbar-logo" autoplay loop muted playsinline preload="metadata" aria-label="Arknx Logo Animation">
+          <source src="assets/images/logoAnimationbg.webm" type="video/webm">
+          Your browser does not support the logo animation.
+        </video>
         <div class="logo-animation-container">
           <span class="shimmer-text">Experience the Future, Coming Soon..!</span>
           <div class="pulse-bar"></div>
@@ -1485,7 +1538,7 @@ text-align: center;
   <!-- WHY US -->
   <section id="why" class="py-3">
     <div class="container">
-      <h2 class="section-title text-center fs-3 mb-3">Why Arknx?</h2>
+      <h2 class="section-title text-center fs-3 mb-3" data-aos="zoom-in-up" data-aos-delay="60">Why Arknx?</h2>
       <!-- <div class="row g-4 flex-nowrap-mobile"> -->
         
         <!-- <div class="col-11 col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -1540,16 +1593,16 @@ text-align: center;
     </div>
   </section> -->
 
-  <!-- <section class="problem-section">
-    <div class="container"> -->
+  <section class="problem-section">
+    <div class="container">
 
-<h2 class="section-title text-center mb-5">
+<h2 class="section-title text-center mb-5" data-aos="zoom-in-up" data-aos-delay="80">
 The Digital Marketplace is Fragmented
 </h2>
 
 <div class="row g-4">
 
-<div class="col-md-4">
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="120">
 <div class="problem-card">
 <div class="problem-icon text-danger">
 <i class="fas fa-layer-group"></i>
@@ -1561,7 +1614,7 @@ Businesses must use multiple platforms to manage services and customers.
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="220">
 <div class="problem-card">
 <div class="problem-icon text-warning">
 <i class="fas fa-cogs"></i>
@@ -1573,7 +1626,7 @@ Commerce, services and logistics operate separately.
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="320">
 <div class="problem-card">
 <div class="problem-icon text-primary">
 <i class="fas fa-mobile-alt"></i>
@@ -1860,6 +1913,27 @@ The <strong>Consumer–Merchant–Driver ecosystem</strong> creates a strong net
             <div class="info-text">
               <h4>E-MAIL</h4>
               <p>info@arknx.in</p>
+            </div>
+          </div>
+
+          <div class="social-block">
+            <h4 class="social-title">FOLLOW US</h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/arknx-technologies-4436333b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.instagram.com/arknxtechnologies?utm_source=qr&igsh=MXJyeGd4Z3g3MmgwOA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.threads.com/@arknxtechnologies" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+                <i class="fa-brands fa-threads"></i>
+              </a>
+              <a href="https://x.com/Arknxtechnology" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://youtube.com/@arknxtechnologies?si=F-qrmZmI9tJiX223" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
             </div>
           </div>
 
