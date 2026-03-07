@@ -176,7 +176,7 @@
       background-attachment: fixed;
       display: flex;
       align-items: center;
-      padding: 120px 0 80px 0;
+      padding: 140px 0 100px 0;
       overflow: hidden;
     }
 
@@ -406,6 +406,16 @@
     }
 
     /* SECTION TITLES */
+    section {
+      padding: 100px 0;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+    }
+
     .section-title {
       font-weight: 800;
       margin-bottom: 40px;
@@ -625,14 +635,14 @@
     }
 
     .navbar-logo {
-      height: 90px;
+      height: 70px;
       width: auto;
       margin: 0;
       transition: all 0.3s ease;
     }
 
     .navbar.scrolled .navbar-logo {
-      height: 70px;
+      height: 55px;
       margin: 0;
     }
 
@@ -642,12 +652,13 @@
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(10px);
      transition: all 0.4s ease;
-     padding: 10px 0;
+     padding: 0px 0;
      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+     min-height: 60px;
    }
    .navbar.scrolled {
      background: #ffffff !important;
-     padding: 12px 0;
+     padding: 0px 0;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
    .navbar-dark .nav-link {
@@ -936,6 +947,7 @@ padding:25px;
 border-radius:15px;
 font-size:17px;
 color:#1e3a8a;
+text-align: center;
 }
     /* CONTACT US SECTION (Same as PNGC) */
     .contact-section {
@@ -1114,25 +1126,25 @@ color:#1e3a8a;
     @media (max-width: 768px) {
       .ticker-item { font-size: 1rem; margin-right: 40px; }
       .ticker-item img { height: 25px; }
-      .navbar { padding: 5px 0; }
+      .navbar { padding: 0; min-height: 50px; }
       .navbar-logo {
         height: 50px !important;
         margin: 0 !important;
       }
       .logo-animation-container {
-        margin: 0 10px;
+        margin: 0 8px;
         flex-shrink: 1;
         min-width: 0;
+        overflow: hidden;
       }
       .shimmer-text {
-        font-size: 0.55rem !important;
-        letter-spacing: 0.2px !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 0.1px !important;
         white-space: nowrap !important;
-        max-width: none !important;
       }
       .pulse-bar {
         height: 2px;
-        margin-top: 2px;
+        margin-top: 1px;
       }
       .navbar-brand { font-size: 1.2rem !important; }
       .navbar-brand img { height: 30px; }
@@ -1166,18 +1178,18 @@ color:#1e3a8a;
         min-width: 0;
       }
       .navbar-logo {
-        height: 40px !important;
+        height: 45px !important;
         margin: 0 !important;
       }
       .logo-animation-container {
-        margin: 0 8px;
-        flex-shrink: 1;
+        margin: 0 5px;
+        flex: 1;
         min-width: 0;
       }
       .shimmer-text {
-        font-size: 0.65rem !important;
-        letter-spacing: 0.1px !important;
-        max-width: 150px !important;
+        font-size: 0.55rem !important;
+        letter-spacing: 0px !important;
+        max-width: 100% !important;
       }
       .pulse-bar {
         height: 1px;
@@ -1202,8 +1214,11 @@ color:#1e3a8a;
         height: 35px !important;
         margin: 0 !important;
       }
+      .shimmer-text {
+        font-size: 0.45rem !important;
+      }
       .logo-animation-container {
-        margin-left: 5px !important;
+        margin-left: 2px !important;
       }
       .navbar-toggler {
         padding: 4px !important;
@@ -1681,10 +1696,7 @@ that allows rapid expansion.
 </div>
 
 <div class="ecosystem-box">
-
-The <strong>Consumer–Merchant–Driver ecosystem</strong> creates a strong 
-network effect, allowing the platform to scale efficiently.
-
+The <strong>Consumer–Merchant–Driver ecosystem</strong> creates a strong network effect, allowing the platform to scale efficiently.
 </div>
 
 </div>
